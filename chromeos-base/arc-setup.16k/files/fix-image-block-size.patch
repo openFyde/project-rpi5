@@ -1,0 +1,13 @@
+diff --git a/arc/setup/BUILD.gn b/arc/setup/BUILD.gn
+index 0640c22728..ee14775b4c 100644
+--- a/arc/setup/BUILD.gn
++++ b/arc/setup/BUILD.gn
+@@ -166,7 +166,7 @@ action("generate_squashfs") {
+     "-comp",
+     "lzo",
+     "-b",
+-    "4K",
++    "16K",
+ 
+     # Create rootfs and necessary dev nodes for art container.
+     # ashmem minor number is dynamic determined and will be bind

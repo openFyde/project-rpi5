@@ -1,0 +1,13 @@
+diff --git a/arc/container/sdcard/BUILD.gn b/arc/container/sdcard/BUILD.gn
+index a9c9a59107..3131955383 100644
+--- a/arc/container/sdcard/BUILD.gn
++++ b/arc/container/sdcard/BUILD.gn
+@@ -39,7 +39,7 @@ action("generate_squashfs") {
+     "-comp",
+     "lzo",
+     "-b",
+-    "4K",
++    "16K",
+     "-p",
+     "/data d 700 0 0",
+     "-p",

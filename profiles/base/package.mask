@@ -1,0 +1,1 @@
+virtual/fydeos-board-spec::rpi4-openfyde-base
