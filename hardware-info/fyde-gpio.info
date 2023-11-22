@@ -1,0 +1,118 @@
+gpiochip0 - 32 lines:
+	line   0:          "-"       unused   input  active-high 
+	line   1: "2712_BOOT_CS_N" "spi10 CS0" output active-low [used]
+	line   2: "2712_BOOT_MISO" unused input active-high 
+	line   3: "2712_BOOT_MOSI" unused input active-high 
+	line   4: "2712_BOOT_SCLK" unused input active-high 
+	line   5:          "-"       unused   input  active-high 
+	line   6:          "-"       unused   input  active-high 
+	line   7:          "-"       unused   input  active-high 
+	line   8:          "-"       unused   input  active-high 
+	line   9:          "-"       unused   input  active-high 
+	line  10:          "-"       unused   input  active-high 
+	line  11:          "-"       unused   input  active-high 
+	line  12:          "-"       unused   input  active-high 
+	line  13:          "-"       unused   input  active-high 
+	line  14:   "PCIE_SDA"       unused   input  active-high 
+	line  15:   "PCIE_SCL"       unused   input  active-high 
+	line  16:          "-"       unused   input  active-high 
+	line  17:          "-"       unused   input  active-high 
+	line  18:          "-"       unused   input  active-high 
+	line  19:          "-"       unused   input  active-high 
+	line  20:   "PWR_GPIO" "pwr_button"   input   active-low [used]
+	line  21: "2712_G21_FS" unused input active-high 
+	line  22:          "-"       unused   input  active-high 
+	line  23:          "-"       unused   input  active-high 
+	line  24:     "BT_RTS"       unused   input  active-high 
+	line  25:     "BT_CTS"       unused   input  active-high 
+	line  26:     "BT_TXD"       unused   input  active-high 
+	line  27:     "BT_RXD"       unused   input  active-high 
+	line  28:      "WL_ON"  "wl_on_reg"  output  active-high [used]
+	line  29:      "BT_ON"   "shutdown"  output  active-high [used]
+	line  30: "WIFI_SDIO_CLK" unused input active-high 
+	line  31: "WIFI_SDIO_CMD" unused input active-high 
+gpiochip1 - 4 lines:
+	line   0: "WIFI_SDIO_D0" unused input active-high 
+	line   1: "WIFI_SDIO_D1" unused input active-high 
+	line   2: "WIFI_SDIO_D2" unused input active-high 
+	line   3: "WIFI_SDIO_D3" unused input active-high 
+gpiochip2 - 17 lines:
+	line   0:    "RP1_SDA"       unused   input  active-high 
+	line   1:    "RP1_SCL"       unused   input  active-high 
+	line   2:    "RP1_RUN" "RP1 RUN pin" output active-high [used]
+	line   3: "SD_IOVDD_SEL" "vdd-sd-io" output active-high [used]
+	line   4:  "SD_PWR_ON" "sd_vcc_reg"  output  active-high [used]
+	line   5:  "SD_CDET_N"       unused   input  active-high 
+	line   6:   "SD_FLG_N"       unused   input  active-high 
+	line   7:          "-"       unused   input  active-high 
+	line   8:  "2712_WAKE"       unused   input  active-high 
+	line   9: "2712_STAT_LED" "ACT" output active-low [used]
+	line  10:          "-"       unused   input  active-high 
+	line  11:          "-"       unused   input  active-high 
+	line  12:   "PMIC_INT"       unused   input  active-high 
+	line  13: "UART_TX_FS"       unused   input  active-high 
+	line  14: "UART_RX_FS"       unused   input  active-high 
+	line  15:          "-"       unused   input  active-high 
+	line  16:          "-"       unused   input  active-high 
+gpiochip3 - 6 lines:
+	line   0:  "HDMI0_SCL"       unused   input  active-high 
+	line   1:  "HDMI0_SDA"       unused   input  active-high 
+	line   2:  "HDMI1_SCL"       unused   input  active-high 
+	line   3:  "HDMI1_SDA"       unused   input  active-high 
+	line   4:   "PMIC_SCL"       unused   input  active-high 
+	line   5:   "PMIC_SDA"       unused   input  active-high 
+gpiochip4 - 54 lines:
+	line   0:      "ID_SD"       unused   input  active-high 
+	line   1:      "ID_SC"       unused   input  active-high 
+	line   2:       "PIN3"       unused   input  active-high 
+	line   3:       "PIN5"       unused   input  active-high 
+	line   4:       "PIN7"       unused   input  active-high 
+	line   5:      "PIN29"       unused   input  active-high 
+	line   6:      "PIN31"       unused   input  active-high 
+	line   7:      "PIN26"       unused   input  active-high 
+	line   8:      "PIN24"       unused   input  active-high 
+	line   9:      "PIN21"       unused   input  active-high 
+	line  10:      "PIN19"       unused   input  active-high 
+	line  11:      "PIN23"       unused   input  active-high 
+	line  12:      "PIN32"       unused   input  active-high 
+	line  13:      "PIN33"       unused   input  active-high 
+	line  14:       "PIN8"       unused   input  active-high 
+	line  15:      "PIN10"       unused   input  active-high 
+	line  16:      "PIN36"       unused   input  active-high 
+	line  17:      "PIN11"       unused   input  active-high 
+	line  18:      "PIN12"       unused   input  active-high 
+	line  19:      "PIN35"       unused   input  active-high 
+	line  20:      "PIN38"       unused   input  active-high 
+	line  21:      "PIN40"       unused   input  active-high 
+	line  22:      "PIN15"       unused   input  active-high 
+	line  23:      "PIN16"       unused   input  active-high 
+	line  24:      "PIN18"       unused   input  active-high 
+	line  25:      "PIN22"       unused   input  active-high 
+	line  26:      "PIN37"       unused   input  active-high 
+	line  27:      "PIN13"       unused   input  active-high 
+	line  28: "PCIE_RP1_WAKE" unused input active-high 
+	line  29:   "FAN_TACH"       unused   input  active-high 
+	line  30:   "HOST_SDA"       unused   input  active-high 
+	line  31:   "HOST_SCL"       unused   input  active-high 
+	line  32:  "ETH_RST_N"  "phy-reset"  output   active-low [used]
+	line  33:          "-"       unused   input  active-high 
+	line  34: "CD0_IO0_MICCLK" "cam0_reg" output active-high [used]
+	line  35: "CD0_IO0_MICDAT0" unused input active-high 
+	line  36: "RP1_PCIE_CLKREQ_N" unused input active-high 
+	line  37:          "-"       unused   input  active-high 
+	line  38:    "CD0_SDA"       unused   input  active-high 
+	line  39:    "CD0_SCL"       unused   input  active-high 
+	line  40:    "CD1_SDA"       unused   input  active-high 
+	line  41:    "CD1_SCL"       unused   input  active-high 
+	line  42: "USB_VBUS_EN" unused output active-high 
+	line  43:   "USB_OC_N"       unused   input  active-high 
+	line  44: "RP1_STAT_LED" "PWR" output active-low [used]
+	line  45:    "FAN_PWM"       unused  output  active-high 
+	line  46: "CD1_IO0_MICCLK" "cam1_reg" output active-high [used]
+	line  47:  "2712_WAKE"       unused   input  active-high 
+	line  48: "CD1_IO1_MICDAT1" unused input active-high 
+	line  49: "EN_MAX_USB_CUR" unused output active-high 
+	line  50:          "-"       unused   input  active-high 
+	line  51:          "-"       unused   input  active-high 
+	line  52:          "-"       unused   input  active-high 
+	line  53:          "-"       unused   input  active-high 

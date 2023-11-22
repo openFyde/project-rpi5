@@ -1,0 +1,78 @@
+Module                  Size  Used by
+rfcomm                 81920  4
+snd_seq_dummy          65536  0
+snd_hrtimer            65536  1
+snd_seq                98304  7 snd_seq_dummy
+snd_seq_device         65536  1 snd_seq
+algif_hash             65536  1
+algif_skcipher         65536  1
+af_alg                 65536  6 algif_hash,algif_skcipher
+bnep                   65536  2
+aes_ce_blk             65536  4
+aes_ce_cipher          65536  1 aes_ce_blk
+ghash_ce               65536  0
+gf128mul               65536  1 ghash_ce
+binfmt_misc            65536  1
+hci_uart               81920  0
+btbcm                  65536  1 hci_uart
+sha2_ce                65536  0
+bluetooth             606208  33 hci_uart,btbcm,bnep,rfcomm
+sha256_arm64           65536  1 sha2_ce
+sha1_ce                65536  0
+ecdh_generic           65536  2 bluetooth
+raspberrypi_hwmon      65536  0
+ecc                    81920  1 ecdh_generic
+libaes                 65536  4 aes_ce_cipher,bluetooth,ghash_ce,aes_ce_blk
+brcmfmac              360448  0
+brcmutil               65536  1 brcmfmac
+rpivid_hevc            81920  0
+v4l2_mem2mem           81920  1 rpivid_hevc
+pisp_be                65536  0
+videobuf2_dma_contig    65536  2 pisp_be,rpivid_hevc
+videobuf2_memops       65536  1 videobuf2_dma_contig
+videobuf2_v4l2         65536  3 pisp_be,rpivid_hevc,v4l2_mem2mem
+cfg80211              966656  1 brcmfmac
+videobuf2_common      114688  6 pisp_be,videobuf2_dma_contig,videobuf2_v4l2,rpivid_hevc,v4l2_mem2mem,videobuf2_memops
+rfkill                 65536  6 bluetooth,cfg80211
+pwm_fan                65536  0
+videodev              311296  5 pisp_be,videobuf2_v4l2,videobuf2_common,rpivid_hevc,v4l2_mem2mem
+mc                     98304  6 videodev,pisp_be,videobuf2_v4l2,videobuf2_common,rpivid_hevc,v4l2_mem2mem
+rp1_adc                65536  0
+raspberrypi_gpiomem    65536  0
+nvmem_rmem             65536  0
+joydev                 65536  0
+sg                     81920  0
+uio_pdrv_genirq        65536  0
+uio                    65536  1 uio_pdrv_genirq
+i2c_dev                65536  0
+fuse                  163840  5
+dm_mod                180224  0
+ip_tables              81920  0
+x_tables               98304  1 ip_tables
+ipv6                  589824  44
+vc4                   409600  14
+snd_soc_hdmi_codec     65536  2
+drm_display_helper     65536  1 vc4
+cec                    81920  1 vc4
+drm_dma_helper         65536  1 vc4
+drm_kms_helper        229376  4 drm_dma_helper,vc4
+syscopyarea            65536  1 drm_kms_helper
+sysfillrect            65536  1 drm_kms_helper
+sysimgblt              65536  1 drm_kms_helper
+spidev                 65536  0
+fb_sys_fops            65536  1 drm_kms_helper
+snd_soc_core          294912  2 vc4,snd_soc_hdmi_codec
+v3d                   131072  3
+gpu_sched              98304  1 v3d
+snd_compress           65536  1 snd_soc_core
+snd_pcm_dmaengine      65536  1 snd_soc_core
+spi_bcm2835            65536  0
+snd_pcm               163840  4 snd_soc_hdmi_codec,snd_compress,snd_soc_core,snd_pcm_dmaengine
+drm_shmem_helper       65536  1 v3d
+snd_timer              81920  3 snd_seq,snd_hrtimer,snd_pcm
+i2c_brcmstb            65536  0
+drm                   622592  16 gpu_sched,drm_kms_helper,drm_dma_helper,v3d,vc4,drm_shmem_helper,drm_display_helper
+snd                   147456  11 snd_seq,snd_seq_device,snd_soc_hdmi_codec,snd_timer,snd_compress,snd_soc_core,snd_pcm
+drm_panel_orientation_quirks    65536  1 drm
+gpio_keys              65536  0
+backlight              65536  1 drm
