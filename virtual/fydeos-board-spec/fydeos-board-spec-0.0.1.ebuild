@@ -18,7 +18,6 @@ RDEPEND="
   virtual/fydemina
   chromeos-base/auto-expand-partition
   chromeos-base/chromeos-bsp-rpi5
-  chromeos-base/workaround-start-ui-after-vc4-inited
 "
 
 DEPEND="${RDEPEND}"

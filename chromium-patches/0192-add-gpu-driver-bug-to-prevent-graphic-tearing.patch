@@ -1,0 +1,32 @@
+diff --git a/gpu/config/gpu_driver_bug_list.json b/gpu/config/gpu_driver_bug_list.json
+index 65276b3a245b5..e5fdc13b1bb52 100644
+--- a/gpu/config/gpu_driver_bug_list.json
++++ b/gpu/config/gpu_driver_bug_list.json
+@@ -4216,6 +4216,27 @@
+       "features": [
+         "disable_accelerated_vp9_encode"
+       ]
++    },
++    {
++      "id": 413,
++      "cr_bugs": [1393646],
++			"description": "Rpi4/5 requires a flush prior to the creation of a fence.",
++      "comment": [
++        "The driver has associated queues per buffer. These buffers are in ",
++        "order say A, B and C. We append our fence to queue C. On submission ",
++        "to the gpu these are reordered to say C, B, and then A. By flushing ",
++        "prior to fence insertion we insure that A, B, and C are submitted to ",
++        "the GPU prior to the fence."
++      ],
++      "os": {
++        "type": "chromeos"
++      },
++      "gl_vendor": "Broadcom",
++      "features": [
++        "flush_before_create_fence",
++        "use_virtualized_gl_contexts",
++        "rely_on_implicit_sync_for_swap_buffers"
++      ]
+     }
+   ]
+ }
