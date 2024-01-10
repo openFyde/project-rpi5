@@ -18,6 +18,7 @@ RDEPEND="
   virtual/fydemina
   chromeos-base/auto-expand-partition
   chromeos-base/chromeos-bsp-rpi5
+  chromeos-base/device-appid
 "
 
 DEPEND="${RDEPEND}"
