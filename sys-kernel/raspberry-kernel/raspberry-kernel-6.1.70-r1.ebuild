@@ -6,7 +6,7 @@
 
 EAPI=7
 CROS_WORKON_REPO="https://github.com/raspberrypi"
-CROS_WORKON_COMMIT="2affda8d2b172aa0fd22778983d983fc9522e621"
+CROS_WORKON_COMMIT="2c085a1ff40521ab89d8f1894757aa83b59b4607"
 CROS_WORKON_PROJECT="linux"
 CROS_WORKON_LOCALNAME="kernel/v5.10-rpi"
 CROS_WORKON_EGIT_BRANCH="rpi-6.1.y"
@@ -31,4 +31,4 @@ KEYWORDS="*"
 # Don't forget to update the comment in _all_ chromeos-kernel-x_x-9999.ebuild
 # files (!!!)
 #
-# The coolest prime number is: 149
+# The coolest prime number is: 151
