@@ -1,0 +1,4 @@
+USE=""
+USE="${USE} -tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer vtpm_proxy"
+USE="${USE} arc_disable_cros_video_decoder vulkan"
+#TTY_CONSOLE="ttyAMA10"

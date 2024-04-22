@@ -1,7 +1,7 @@
-Index: raspberry-kernel/drivers/staging/vc04_services/bcm2835-codec/bcm2835-v4l2-codec.c
+Index: kernel-raspberry/drivers/staging/vc04_services/bcm2835-codec/bcm2835-v4l2-codec.c
 ===================================================================
---- raspberry-kernel.orig/drivers/staging/vc04_services/bcm2835-codec/bcm2835-v4l2-codec.c
-+++ raspberry-kernel/drivers/staging/vc04_services/bcm2835-codec/bcm2835-v4l2-codec.c
+--- kernel-raspberry.orig/drivers/staging/vc04_services/bcm2835-codec/bcm2835-v4l2-codec.c
++++ kernel-raspberry/drivers/staging/vc04_services/bcm2835-codec/bcm2835-v4l2-codec.c
 @@ -2382,7 +2382,22 @@ static int bcm2835_codec_s_ctrl(struct v
  	case V4L2_CID_MPEG_VIDEO_B_FRAMES:
  		ret = 0;
@@ -48,10 +48,10 @@ Index: raspberry-kernel/drivers/staging/vc04_services/bcm2835-codec/bcm2835-v4l2
  		if (hdl->error) {
  			rc = hdl->error;
  			goto free_ctrl_handler;
-Index: raspberry-kernel/drivers/staging/media/rpivid/rpivid.c
+Index: kernel-raspberry/drivers/staging/media/rpivid/rpivid.c
 ===================================================================
---- raspberry-kernel.orig/drivers/staging/media/rpivid/rpivid.c
-+++ raspberry-kernel/drivers/staging/media/rpivid/rpivid.c
+--- kernel-raspberry.orig/drivers/staging/media/rpivid/rpivid.c
++++ kernel-raspberry/drivers/staging/media/rpivid/rpivid.c
 @@ -89,6 +89,23 @@ static const struct rpivid_control rpivi
  		},
  		.required	= false,

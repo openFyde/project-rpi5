@@ -1,7 +1,7 @@
-Index: raspberry-kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c
+Index: kernel-raspberry/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c
 ===================================================================
---- raspberry-kernel.orig/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c
-+++ raspberry-kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c
+--- kernel-raspberry.orig/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c
++++ kernel-raspberry/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c
 @@ -1466,7 +1466,8 @@ int brcmf_p2p_notify_action_frame_rx(str
  			       ETH_ALEN);
  	memcpy(mgmt_frame->sa, e->addr, ETH_ALEN);

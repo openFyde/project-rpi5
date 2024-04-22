@@ -1,2 +1,3 @@
 virtual/fydeos-board-spec::rpi4-openfyde-base
 media-libs/minigbm::baseboard-rpi3
+#chromeos-base/crosvm::chromiumos

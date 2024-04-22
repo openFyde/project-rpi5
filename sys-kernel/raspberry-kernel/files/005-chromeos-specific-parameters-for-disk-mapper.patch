@@ -1,7 +1,7 @@
-Index: kernel-rpi/drivers/md/dm-verity-target.c
+Index: kernel-raspberry/drivers/md/dm-verity-target.c
 ===================================================================
---- kernel-rpi.orig/drivers/md/dm-verity-target.c
-+++ kernel-rpi/drivers/md/dm-verity-target.c
+--- kernel-raspberry.orig/drivers/md/dm-verity-target.c
++++ kernel-raspberry/drivers/md/dm-verity-target.c
 @@ -16,8 +16,10 @@
  #include "dm-verity.h"
  #include "dm-verity-fec.h"
@@ -377,10 +377,10 @@ Index: kernel-rpi/drivers/md/dm-verity-target.c
  	return r;
  }
  
-Index: kernel-rpi/drivers/md/dm-verity.h
+Index: kernel-raspberry/drivers/md/dm-verity.h
 ===================================================================
---- kernel-rpi.orig/drivers/md/dm-verity.h
-+++ kernel-rpi/drivers/md/dm-verity.h
+--- kernel-raspberry.orig/drivers/md/dm-verity.h
++++ kernel-raspberry/drivers/md/dm-verity.h
 @@ -15,6 +15,7 @@
  #include <linux/device-mapper.h>
  #include <linux/interrupt.h>
@@ -438,10 +438,10 @@ Index: kernel-rpi/drivers/md/dm-verity.h
  static inline struct ahash_request *verity_io_hash_req(struct dm_verity *v,
  						     struct dm_verity_io *io)
  {
-Index: kernel-rpi/drivers/md/dm-verity-chromeos.c
+Index: kernel-raspberry/drivers/md/dm-verity-chromeos.c
 ===================================================================
 --- /dev/null
-+++ kernel-rpi/drivers/md/dm-verity-chromeos.c
++++ kernel-raspberry/drivers/md/dm-verity-chromeos.c
 @@ -0,0 +1,292 @@
 +/*
 + * Copyright (C) 2010 The Chromium OS Authors <chromium-os-dev@chromium.org>
@@ -735,10 +735,10 @@ Index: kernel-rpi/drivers/md/dm-verity-chromeos.c
 +#undef MODULE_PARAM_PREFIX
 +#define MODULE_PARAM_PREFIX	""
 +module_param_string(kern_guid, kern_guid, sizeof(kern_guid), 0);
-Index: kernel-rpi/drivers/md/Makefile
+Index: kernel-raspberry/drivers/md/Makefile
 ===================================================================
---- kernel-rpi.orig/drivers/md/Makefile
-+++ kernel-rpi/drivers/md/Makefile
+--- kernel-raspberry.orig/drivers/md/Makefile
++++ kernel-raspberry/drivers/md/Makefile
 @@ -84,6 +84,7 @@ obj-$(CONFIG_DM_INTEGRITY)	+= dm-integri
  obj-$(CONFIG_DM_ZONED)		+= dm-zoned.o
  obj-$(CONFIG_DM_WRITECACHE)	+= dm-writecache.o
@@ -747,10 +747,10 @@ Index: kernel-rpi/drivers/md/Makefile
  
  ifeq ($(CONFIG_DM_INIT),y)
  dm-mod-objs			+= dm-init.o
-Index: kernel-rpi/drivers/md/Kconfig
+Index: kernel-raspberry/drivers/md/Kconfig
 ===================================================================
---- kernel-rpi.orig/drivers/md/Kconfig
-+++ kernel-rpi/drivers/md/Kconfig
+--- kernel-raspberry.orig/drivers/md/Kconfig
++++ kernel-raspberry/drivers/md/Kconfig
 @@ -294,6 +294,16 @@ config DM_CRYPT
  
  	  If unsure, say N.

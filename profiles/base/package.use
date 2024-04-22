@@ -1,0 +1,2 @@
+#media-libs/virglrenderer -vulkan
+#chromeos-base/vm_host_tools -vulkan
