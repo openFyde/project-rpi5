@@ -17,7 +17,7 @@ Index: minigbm/drv.c
 +#ifdef DRV_V3D
 +extern const struct backend backend_v3d;
 +#endif
- 
+
  // Dumb / generic drivers
  extern const struct backend backend_evdi;
 @@ -68,6 +70,9 @@ static const struct backend *drv_backend
@@ -53,15 +53,15 @@ Index: minigbm/drv.c
 +  #endif
  	return best;
  }
- 
+
 @@ -485,7 +498,6 @@ void *drv_bo_map(struct bo *bo, const st
- 
+
  	if (bo->is_test_buffer)
  		return MAP_FAILED;
 -
  	mapping.rect = *rect;
  	mapping.refcount = 1;
- 
+
 @@ -519,6 +531,7 @@ void *drv_bo_map(struct bo *bo, const st
  	if (!mapping.vma) {
  		*map_data = NULL;
@@ -69,7 +69,7 @@ Index: minigbm/drv.c
 +		drv_loge("calloc for vma failed.\n");
  		return MAP_FAILED;
  	}
- 
+
 @@ -528,6 +541,7 @@ void *drv_bo_map(struct bo *bo, const st
  		*map_data = NULL;
  		free(mapping.vma);
@@ -77,7 +77,7 @@ Index: minigbm/drv.c
 +		drv_loge("driver:%s bo_map failed.\n", drv->backend->name);
  		return MAP_FAILED;
  	}
- 
+
 Index: minigbm/drv_helpers.c
 ===================================================================
 --- minigbm.orig/drv_helpers.c
@@ -568,7 +568,7 @@ Index: minigbm/v3d.c
 +  drv_bo_from_format(bo, stride, 1, algin_height, format);
 +  bo->meta.total_size = ALIGN(bo->meta.total_size, 4096);
 +  bo_create.size = bo->meta.total_size;
-+  if (use_flags & BO_USE_SCANOUT || use_flags & (BO_USE_HW_VIDEO_DECODER | BO_USE_HW_VIDEO_ENCODER)) {
++  if (use_flags & (BO_USE_SW_MASK | BO_USE_SCANOUT | BO_USE_HW_VIDEO_DECODER | BO_USE_HW_VIDEO_ENCODER)) {
 +     bo_create.flags = ARC_CALLOC;
 +     bo->meta.format_modifier = DRM_FORMAT_MOD_LINEAR;
 +     bo->meta.tiling = V3D_TILING_RASTER;
@@ -778,5 +778,5 @@ Index: minigbm/dumb_driver.c
 +INIT_DUMB_DRIVER(vc4)
 +#endif
  INIT_DUMB_DRIVER(vkms)
- 
+
  #ifndef DRV_ROCKCHIP
