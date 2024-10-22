@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="~*"
 VIDEO_CARDS="
 	amdgpu exynos intel marvell mediatek msm
-	radeon radeonsi rockchip tegra vc4 virgl
+	radeon radeonsi rockchip tegra vc4 virgl v3d
 "
-IUSE="-asan linear_align_256"
+IUSE="-asan linear_align_256 test"
 for card in ${VIDEO_CARDS}; do
 	IUSE+=" video_cards_${card}"
 done
@@ -31,6 +31,7 @@ IUSE+=" intel_drm_tile4"
 
 RDEPEND="
 	x11-libs/libdrm
+	test? ( dev-cpp/gtest )
 	!media-libs/mesa[gbm]"
 
 DEPEND="${RDEPEND}
@@ -76,7 +77,14 @@ src_configure() {
 	use video_cards_vc4 && append-cppflags -DDRV_VC4 && export DRV_VC4=1
 	use video_cards_virgl && append-cppflags -DDRV_VIRGL && export DRV_VIRGL=1
 	use linear_align_256 && append-cppflags -DLINEAR_ALIGN_256
+  use video_cards_v3d && append-cppflags -DDRV_V3D && export DRV_V3D=1
 	cros-common.mk_src_configure
+}
+
+src_test() {
+	if use amd64 || use x86; then
+		emake tests
+	fi
 }
 
 src_compile() {

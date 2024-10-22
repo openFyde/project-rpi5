@@ -3,8 +3,8 @@
 
 EAPI="7"
 
-CROS_WORKON_COMMIT="90b2d4773273b3ea180aff8f995d58e7b7604eb5"
-CROS_WORKON_TREE="0fea7b370b8eeda4f4e253bb916c5e512fd48906"
+CROS_WORKON_COMMIT="c52bbc8435516643f696c602d1442719a232f7e6"
+CROS_WORKON_TREE="2ff4b83e46449a4cc032a6f89976f725843afb70"
 CROS_WORKON_PROJECT="chromiumos/platform/minigbm"
 CROS_WORKON_LOCALNAME="../platform/minigbm"
 CROS_WORKON_OUTOFTREE_BUILD=1
@@ -21,18 +21,19 @@ VIDEO_CARDS="
 	amdgpu exynos intel marvell mediatek msm
 	radeon radeonsi rockchip tegra vc4 virgl v3d
 "
-IUSE="-asan linear_align_256"
+IUSE="-asan linear_align_256 test"
 for card in ${VIDEO_CARDS}; do
 	IUSE+=" video_cards_${card}"
 done
 
-MINI_GBM_PLATFORMS_USE=( mt8183 mt8186 mt8188g mt8192 mt8195 sc7280)
+MINI_GBM_PLATFORMS_USE=( mt8173 mt8183 mt8186 mt8188g mt8192 mt8195 sc7280)
 IUSE+=" ${MINI_GBM_PLATFORMS_USE[*]/#/minigbm_platform_}"
 
 IUSE+=" intel_drm_tile4"
 
 RDEPEND="
 	x11-libs/libdrm
+	test? ( dev-cpp/gtest )
 	!media-libs/mesa[gbm]"
 
 DEPEND="${RDEPEND}
@@ -43,9 +44,7 @@ DEPEND="${RDEPEND}
 	)"
 
 src_prepare() {
-  if use video_cards_v3d; then
-    eapply "${FILESDIR}/vc6.patch"
-  fi
+  eapply ${FILESDIR}/vc6.patch
 	default
 	sanitizers-setup-env
 	cros-common.mk_src_prepare
@@ -65,6 +64,7 @@ src_configure() {
 		fi
 	fi
 	use video_cards_marvell && append-cppflags -DDRV_MARVELL && export DRV_MARVELL=1
+	use minigbm_platform_mt8173 && append-cppflags -DMTK_MT8173
 	use minigbm_platform_mt8183 && append-cppflags -DMTK_MT8183
 	use minigbm_platform_mt8186 && append-cppflags -DMTK_MT8186
 	use minigbm_platform_mt8188g && append-cppflags -DMTK_MT8188G
@@ -80,8 +80,14 @@ src_configure() {
 	use video_cards_vc4 && append-cppflags -DDRV_VC4 && export DRV_VC4=1
 	use video_cards_virgl && append-cppflags -DDRV_VIRGL && export DRV_VIRGL=1
 	use linear_align_256 && append-cppflags -DLINEAR_ALIGN_256
-	use video_cards_v3d && append-cppflags -DDRV_V3D && export DRV_V3D=1
+  use video_cards_v3d && append-cppflags -DDRV_V3D && export DRV_V3D=1
 	cros-common.mk_src_configure
+}
+
+src_test() {
+	if use amd64 || use x86; then
+		emake tests
+	fi
 }
 
 src_compile() {
